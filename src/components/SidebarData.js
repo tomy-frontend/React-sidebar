@@ -3,6 +3,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import EmailIcon from "@mui/icons-material/Email";
 import AnalyticsIcon from "@mui/icons-material/Analytics";
 import SendIcon from "@mui/icons-material/Send";
+import ArticleIcon from "@mui/icons-material/Article";
 
 // 名前付きエクスポート
 // listの中の要素はこのファイルで扱う
@@ -29,7 +30,7 @@ export const SidebarData = [
   },
   {
     title: "ブログ",
-    icon: <SendIcon />,
+    icon: <ArticleIcon />,
     link: "/blog",
   },
 ];

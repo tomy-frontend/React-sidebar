@@ -1,0 +1,78 @@
+.Sidebar {
+  --min-width: 180px;
+  --max-width: 200px;
+  --active: #3b6271;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  translate: -100% 0;
+  width: clamp(var(--min-width), 20dvw, var(--max-width));
+  height: 100dvh;
+  padding-block: 2.5rem;
+  background: var(--primary);
+  transition: translate 0.2s linear;
+  z-index: 2;
+}
+
+/* open状態 */
+.Sidebar.open {
+  translate: 0 0;
+}
+
+.SidebarList {
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.row {
+  width: 100%;
+  padding-block: 1em;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+.row:hover {
+  cursor: pointer;
+  background: var(--active);
+}
+
+.row .icon {
+  display: inline-block;
+  display: grid;
+  place-items: center;
+}
+
+.row .title {
+  display: inline-block;
+}
+
+.SidebarList .active {
+  background: var(--active);
+}
+
+.SidebarIcon {
+  padding-block-start: 20px;
+  padding-block-end: 15px;
+  text-align: center;
+  color: var(--white);
+}
+
+.SidebarIcon img {
+  width: 100px;
+  height: 100px;
+  border-radius: calc(infinity * 1px);
+  object-fit: cover;
+}
+
+.SidebarIcon a {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--white);
+  text-align: center;
+}
