@@ -27,4 +27,9 @@ export const SidebarData = [
     icon: <SendIcon />,
     link: "/contact",
   },
+  {
+    title: "ブログ",
+    icon: <SendIcon />,
+    link: "/blog",
+  },
 ];
