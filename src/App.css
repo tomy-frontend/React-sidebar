@@ -16,7 +16,9 @@ a {
   --font-variable-remBase: 16;
 
   /* color */
+  --primary: #2d445d;
   --black: #333;
+  --white: #fff;
 
   /* font */
   --ff-base: sans-serif;
@@ -36,63 +38,44 @@ body {
   overflow-x: hidden;
 }
 
-.Sidebar {
-  --min-width: 180px;
-  --max-width: 200px;
+button {
+  &:focus {
+    outline: none;
+  }
 
-  width: clamp(var(--min-width), 20dvw, var(--max-width));
-  height: 100dvh;
-  background: #2d445d;
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+  }
 }
 
-.SidebarList {
-  width: 100%;
-  height: auto;
-  padding: 0;
+.main {
+  position: relative;
 }
 
-.row {
-  width: 100%;
-  padding-block: 1em;
-  display: grid;
-  grid-template-columns: 30% 1fr;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.row:hover {
+.toggleButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
+  inline-size: fit-content;
+  padding-block: 0.5em;
+  padding-inline: 1em;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  font-size: 0.875rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.2dvh;
+  color: var(--white);
+  background: var(--primary);
   cursor: pointer;
-  background: #3b6271;
+  transition: all 0.3s ease;
+  user-select: none;
+  touch-action: manipulation;
+  z-index: 999;
 }
 
-.row .icon {
-  display: grid;
-  place-items: center;
-}
-
-.SidebarList #active {
-  background: #3b6271;
-}
-
-.SidebarIcon {
-  padding-block-start: 20px;
-  padding-block-end: 15px;
-  text-align: center;
-  color: white;
-}
-
-.SidebarIcon img {
-  width: 100px;
-  height: 100px;
-  border-radius: calc(infinity * 1px);
-  object-fit: cover;
-}
-
-.SidebarIcon a {
-  display: inline-block;
-  font-size: 16px;
-  line-height: 1.5;
-  color: white;
-  text-align: center;
+.toggleButton.open {
+  background: var(--white);
+  color: var(--primary);
 }
