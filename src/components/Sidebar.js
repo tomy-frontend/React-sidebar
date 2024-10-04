@@ -8,7 +8,7 @@ function Sidebar({ isOpen }) {
     <nav
       id="Sidebar"
       className={`Sidebar ${isOpen ? "open" : ""}`}
-      aria-label="メインナビゲーション"
+      aria-label="グローバルナビゲーション"
       aria-hidden={!isOpen}
     >
       <SidebarIcon />
