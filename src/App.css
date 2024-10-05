@@ -49,7 +49,7 @@ button {
   }
 }
 
-.main {
+.aside {
   position: relative;
 }
 
@@ -78,4 +78,29 @@ button {
 .toggleButton.open {
   background: var(--white);
   color: var(--primary);
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 20%, 1fr;
+}
+
+.main {
+  width: 100%;
+  height: 100dvh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  inline-size: fit-content;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  background-color: var(--black);
+  border-radius: calc(infinity * 1px);
+  color: var(--white);
+  user-select: none;
+  touch-action: manipulation;
 }

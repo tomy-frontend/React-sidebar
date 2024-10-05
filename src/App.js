@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
+import MyContext from "./index";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -8,9 +9,20 @@ function App() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const [count, setCount] = useState(0);
+  const myInfo = useContext(MyContext);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
+  useEffect(() => {
+    console.log("useEffectで呼ばれました");
+  }, [count]);
+
   return (
     <div className="App">
-      <main className="main">
+      <div className="aside">
         <button
           className={`toggleButton ${isSidebarOpen ? "open" : ""}`}
           onClick={toggleSidebar}
@@ -22,7 +34,20 @@ function App() {
         </button>
 
         <Sidebar isOpen={isSidebarOpen} />
-      </main>
+      </div>
+
+      <div className="main">
+        <button className="button" onClick={handleClick}>
+          Click me
+        </button>
+        <p>{count}</p>
+
+        <hr />
+        <h1>useContext</h1>
+        <p>{myInfo.name}</p>
+        <p>{myInfo.age}</p>
+        <p>{myInfo.hobby}</p>
+      </div>
     </div>
   );
 }
