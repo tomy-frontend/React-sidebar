@@ -43,7 +43,7 @@ function App() {
         <p>{count}</p>
 
         <hr />
-        <h1>useContext</h1>
+        <h1>useContextで表示された内容</h1>
         <p>{myInfo.name}</p>
         <p>{myInfo.age}</p>
         <p>{myInfo.hobby}</p>
