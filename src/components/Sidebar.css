@@ -1,7 +1,12 @@
+@property --active {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #3b6271;
+}
+
 .Sidebar {
   --min-width: 180px;
   --max-width: 200px;
-  --active: #3b6271;
 
   position: fixed;
   top: 0;
